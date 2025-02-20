@@ -3,10 +3,11 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
-
+import Orders from './pages/Orders';
 import CreateProduct from './pages/CreateProducts';
 import ProtectedRoute from './components/ProtectedRoute';
 import ProductList from './pages/ProductList';
+import CustomerList from './pages/CustomerList';
 
 const App = () => {
   return (
@@ -34,6 +35,22 @@ const App = () => {
         element={
           <ProtectedRoute>
             <ProductList />
+          </ProtectedRoute>
+        }
+      />
+      <Route 
+        path="/orders" 
+        element={
+          <ProtectedRoute>
+            <Orders />
+          </ProtectedRoute>
+        }
+      />
+      <Route 
+        path="/customers" 
+        element={
+          <ProtectedRoute>
+            <CustomerList />
           </ProtectedRoute>
         }
       />

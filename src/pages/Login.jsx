@@ -1,6 +1,7 @@
 // src/pages/Login.jsx
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useAdminStore } from "../store/adminStore";
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
@@ -8,6 +9,7 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [showPassword, setShowPassword] = useState(false);
+  const { setAdmin } = useAdminStore();
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -20,7 +22,7 @@ const Login = () => {
       });
       // Simpan token (misal di localStorage)
       localStorage.setItem('adminToken', response.data.token);
-      // Redirect ke halaman dashboard jika login berhasil
+      setAdmin({ username, token: response.data.token });
       navigate('/dashboard');
     } catch (err) {
       console.error(err);
