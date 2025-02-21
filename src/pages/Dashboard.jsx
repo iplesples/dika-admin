@@ -15,10 +15,6 @@ const Dashboard = () => {
     navigate('/');
   };
 
-  const goToCreateProducts = () => {
-    navigate('/createproducts');
-  };
-
   const goToProductList = () => {
     navigate('/productlist');
   };
@@ -85,17 +81,10 @@ const Dashboard = () => {
             onClick={goToProductList}
             className="w-full px-4 py-2 bg-blue-700 text-white rounded hover:bg-blue-800 transition duration-200"
           >
-            Update
+            Production
           </button>
         </SwiperSlide>
-        <SwiperSlide style={{ width: '120px' }}>
-          <button
-            onClick={goToCreateProducts}
-            className="w-full px-4 py-2 bg-blue-700 text-white rounded hover:bg-blue-800 transition duration-200"
-          >
-            Create
-          </button>
-        </SwiperSlide>
+       
         <SwiperSlide style={{ width: '120px' }}>
           <button
             onClick={goToCustomers}

@@ -4,9 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import Orders from './pages/Orders';
-import CreateProduct from './pages/CreateProducts';
 import ProtectedRoute from './components/ProtectedRoute';
-import ProductList from './pages/ProductList';
 import CustomerList from './pages/CustomerList';
 import ProductManagement from './pages/ProductManagement';
 import AddProduct from './pages/AddProduct';
@@ -25,14 +23,6 @@ const App = () => {
             </ProtectedRoute>
           }
         />
-        <Route 
-        path="/createproducts" 
-        element={
-          <ProtectedRoute>
-            <ProductManagement />
-          </ProtectedRoute>
-        }
-      />
         <Route 
         path="/addproduct" 
         element={
