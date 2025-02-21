@@ -8,6 +8,9 @@ import CreateProduct from './pages/CreateProducts';
 import ProtectedRoute from './components/ProtectedRoute';
 import ProductList from './pages/ProductList';
 import CustomerList from './pages/CustomerList';
+import ProductManagement from './pages/ProductManagement';
+import AddProduct from './pages/AddProduct';
+import UpdateProduct from './pages/UpdateProduct';
 
 const App = () => {
   return (
@@ -26,7 +29,23 @@ const App = () => {
         path="/createproducts" 
         element={
           <ProtectedRoute>
-            <CreateProduct />
+            <ProductManagement />
+          </ProtectedRoute>
+        }
+      />
+        <Route 
+        path="/addproduct" 
+        element={
+          <ProtectedRoute>
+            <AddProduct />
+          </ProtectedRoute>
+        }
+      />
+      <Route 
+        path="/updateproduct/:id" 
+        element={
+          <ProtectedRoute>
+            <UpdateProduct />
           </ProtectedRoute>
         }
       />
@@ -34,7 +53,7 @@ const App = () => {
         path="/productlist" 
         element={
           <ProtectedRoute>
-            <ProductList />
+            <ProductManagement />
           </ProtectedRoute>
         }
       />
